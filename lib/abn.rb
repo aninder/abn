@@ -7,7 +7,7 @@ module Abn
     def verify(abn)
       # binding.pry
       #The Australian Business Number (ABN) is a unique 11 digit identifier
-      if(abn.length != 11 || abn.to_i == 0)
+      if(abn.to_i.to_s.length != 11)
         puts  "ABN is invalid"
         return false
       end
