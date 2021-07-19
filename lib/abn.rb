@@ -5,9 +5,9 @@ module Abn
 
     desc "verify [abn]", "check if the given ABN is valid"
     def verify(abn)
-      # binding.pry
+      abn = abn.to_i.to_s
       #The Australian Business Number (ABN) is a unique 11 digit identifier
-      if(abn.to_i.to_s.length != 11)
+      if(abn.length != 11)
         puts  "ABN is invalid"
         return false
       end
