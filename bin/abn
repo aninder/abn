@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require "thor"
+require 'pry'
+require_relative '../lib/abn'
+Abn::CLI.start(ARGV)

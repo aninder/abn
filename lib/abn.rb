@@ -1,5 +1,5 @@
 require "abn/version"
-
+require 'thor'
 module Abn
   class CLI < Thor
 
@@ -9,7 +9,7 @@ module Abn
       #The Australian Business Number (ABN) is a unique 11 digit identifier
       if(abn.length != 11 || abn.to_i == 0)
         puts  "ABN is invalid"
-        exit 1
+        return false
       end
 
       #Subtract 1 from the first (left-most) digit
@@ -25,10 +25,10 @@ module Abn
       remainder = tot%89
       if(remainder == 0)
         puts "ABN is VALID"
-        exit 0
+        return true
       else
         puts  "ABN is invalid"
-        exit 1
+        return false
       end
     end
   end
