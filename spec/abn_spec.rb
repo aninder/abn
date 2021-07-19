@@ -11,7 +11,7 @@ RSpec.describe Abn do
 
     it "fails if the number is more then 11 digits long" do
       num = Random.rand(10**12)
-      expect(Abn.verify(num)).to be false
+      expect(Abn.verify(51824753556)).to be false
     end
 
     it "is ok if the number is 11 digits long" do
